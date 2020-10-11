@@ -1,0 +1,32 @@
+{
+  "copyright": "Copyright Sveriges Radio 2020. All rights reserved.",
+  "song": [
+    {
+      "title": "Watermelon Sugar",
+      "description": "One Direction - Watermelon Sugar",
+      "artist": "One Direction",
+      "albumname": "Watermelon Sugar",
+      "recordlabel": null,
+      "starttimeutc": "/Date(1602193590000)/",
+      "stoptimeutc": "/Date(1602193756000)/"
+    },
+    {
+      "title": "Giants",
+      "description": "Dermot Kennedy - Giants",
+      "artist": "Dermot Kennedy",
+      "albumname": "Giants",
+      "recordlabel": "Riggins Recording Limited",
+      "starttimeutc": "/Date(1602192605000)/",
+      "stoptimeutc": "/Date(1602192779000)/"
+    },
+    {
+      "title": "One Day Left",
+      "description": "LOVA - One Day Left",
+      "artist": "LOVA",
+      "albumname": "One Day Left",
+      "recordlabel": "Universal Music AB",
+      "starttimeutc": "/Date(1602192390000)/",
+      "stoptimeutc": "/Date(1602192578000)/"
+    }
+  ]
+}

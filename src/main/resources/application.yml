@@ -1,0 +1,12 @@
+external-api-url:
+  base-api-url: http://api.sr.se/api
+  version: /v2
+  playlist: /playlists
+  playlist-by-channel-endpoint: /getplaylistbychannelid
+
+  params:
+    channel-id: id=164
+    limit: size=100
+    start-date-time: startdatetime=2020-10-08
+    end-date-time: enddatetime=2020-10-09
+    format: format=json

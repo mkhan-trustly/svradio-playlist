@@ -1,0 +1,50 @@
+{
+  "copyright": "Copyright Sveriges Radio 2020. All rights reserved.",
+  "song": [
+    {
+      "title": "Watermelon Sugar",
+      "description": "One Direction - Watermelon Sugar",
+      "artist": "One Direction",
+      "albumname": "Watermelon Sugar",
+      "recordlabel": "Columbia",
+      "starttimeutc": "/Date(1602193590000)/",
+      "stoptimeutc": "/Date(1602193756000)/"
+    },
+    {
+      "title": "När jag ser dig",
+      "description": "Hov1 - När jag ser dig",
+      "artist": "Hov1",
+      "albumname": "När jag ser dig",
+      "recordlabel": "Universal Music AB",
+      "starttimeutc": "/Date(1602193349000)/",
+      "stoptimeutc": "/Date(1602193576000)/"
+    },
+    {
+      "title": "One Day Left",
+      "description": "LOVA - One Day Left",
+      "artist": "LOVA",
+      "albumname": "One Day Left",
+      "recordlabel": "Universal Music AB",
+      "starttimeutc": "/Date(1602192390000)/",
+      "stoptimeutc": "/Date(1602192578000)/"
+    },
+    {
+      "title": "OK Not To Be OK",
+      "description": "Marshmello, Demi Lovato - OK Not To Be OK",
+      "artist": "Marshmello, Demi Lovato",
+      "albumname": "OK Not To Be OK",
+      "recordlabel": "Joytime Collective",
+      "starttimeutc": "/Date(1602188607000)/",
+      "stoptimeutc": "/Date(1602188759000)/"
+    },
+    {
+      "title": "Get Lucky",
+      "description": "Daft Punk - Get Lucky",
+      "artist": "Daft Punk",
+      "albumname": "Get Lucky",
+      "recordlabel": "Columbia",
+      "starttimeutc": "/Date(1602187968000)/",
+      "stoptimeutc": "/Date(1602188209000)/"
+    }
+  ]
+}
