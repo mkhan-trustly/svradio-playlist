@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import se.viati.assignment.svradio.playlist.model.Song;
-import se.viati.assignment.svradio.playlist.service.PlaylistService;
+import se.viati.assignment.svradio.playlist.service.PlaylistServiceImpl;
 import se.viati.assignment.svradio.util.PlaylistUtil;
 
 import java.util.Arrays;
@@ -22,13 +22,13 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 
 @ExtendWith(SpringExtension.class)
-public class PlaylistControllerTest {
+public class PlaylistRestControllerTest {
 
     @Mock
-    private PlaylistService playlistService;
+    private PlaylistServiceImpl playlistService;
 
     @InjectMocks
-    private PlaylistController playlistController;
+    private PlaylistRestController playlistController;
 
     @Test
     public void testGetGroupByRecordLabel_ShouldHandleEmptySongsInPlaylist() {

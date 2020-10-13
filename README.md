@@ -18,7 +18,7 @@ Using IDE:> Run `SvRadioApplication.java `
 
 Using terminal:> `mvn clean install && mvn spring-boot:run`
 
-###Test
+### Test
 Using terminal:> `mvn clean test`
 
 Task
@@ -38,8 +38,8 @@ Informationen är inte så detaljerad men gör egna antaganden om hur det ska fu
 Solution
 ========================================================================================================================
 
-The idea was to build a front-end to this application, so a RESTful service was created in the first place. The part of 
-the code that actually solves the assignment is the following. 
+The idea is to build a front-end to this application, so a RESTful service shall deliver the content. The part of 
+the code that actually solves the task is the following. 
 
 ```
 playlist.getSongs()
@@ -48,15 +48,17 @@ playlist.getSongs()
 ```
 TreeMap ensures sorted items and artists are collected in Set to avoid duplicates.
 
-###REST API Services
-GET Service to fetch all record labels
+### REST API Services
+Service to fetch the playlist grouped by record-label (alphabetically sorted)
+`curl http://localhost:8080/api/v1/channel/p3/playlist/recordlabels/artist`
+
+Two additional services to demonstrate RESTful services
+
+* GET Service to fetch all record labels grouped by record-label
 `curl http://localhost:8080/api/v1/channel/p3/playlist/recordlabels`
 
-A specific record label can be fetched by 
+* A specific record label can be fetched by 
 `curl http://localhost:8080/api/v1/channel/p3/playlist/recordlabels/<record-label>`
-
-Finally the one that fullfills the task, to fetch playlist grouped by record-label and a list of unique artists
-`curl http://localhost:8080/api/v1/channel/p3/playlist/recordlabels/artist`
 
 Reference source
 ========================================================================================================================

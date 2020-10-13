@@ -14,10 +14,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import se.viati.assignment.svradio.configuration.ExternalApiUrl;
-import se.viati.assignment.svradio.exception.ApplicationExceptionHandler;
-import se.viati.assignment.svradio.playlist.PlaylistController;
+import se.viati.assignment.svradio.playlist.PlaylistRestController;
 import se.viati.assignment.svradio.playlist.model.Playlist;
-import se.viati.assignment.svradio.playlist.service.PlaylistService;
+import se.viati.assignment.svradio.playlist.service.PlaylistServiceImpl;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -38,13 +37,13 @@ public class ApplicationExceptionHandlerTest {
     private RestTemplate restTemplate;
 
     @InjectMocks
-    private PlaylistService playlistService;
+    private PlaylistServiceImpl playlistService;
 
-    private PlaylistController playlistController;
+    private PlaylistRestController playlistController;
 
     @BeforeEach
     public void setUp() {
-        playlistController = new PlaylistController(playlistService);
+        playlistController = new PlaylistRestController(playlistService);
         mvc = MockMvcBuilders.standaloneSetup(playlistController)
                 .setControllerAdvice(new ApplicationExceptionHandler())
                 .build();

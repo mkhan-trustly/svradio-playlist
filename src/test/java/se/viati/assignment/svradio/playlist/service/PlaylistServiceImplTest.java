@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class PlaylistServiceTest {
+public class PlaylistServiceImplTest {
 
     @Mock
     private ExternalApiUrl externalApiUrl;
@@ -26,7 +26,7 @@ public class PlaylistServiceTest {
     private RestTemplate restTemplate;
 
     @InjectMocks
-    private PlaylistService playlistService;
+    private PlaylistServiceImpl playlistService;
 
     @Test
     public void testFetchPlaylistByChannel_ShouldWorkWithEmptyPlaylist() {

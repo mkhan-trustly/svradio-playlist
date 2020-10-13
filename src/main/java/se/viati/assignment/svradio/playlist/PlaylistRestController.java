@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se.viati.assignment.svradio.playlist.model.Playlist;
 import se.viati.assignment.svradio.playlist.model.Song;
-import se.viati.assignment.svradio.playlist.service.PlaylistService;
+import se.viati.assignment.svradio.playlist.service.PlaylistServiceImpl;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(path = "/api/v1/channel/p3")
-public class PlaylistController {
+public class PlaylistRestController {
 
-    private PlaylistService playlistService;
+    private PlaylistServiceImpl playlistService;
 
-    public PlaylistController(PlaylistService playlistService) {
+    public PlaylistRestController(PlaylistServiceImpl playlistService) {
         this.playlistService = playlistService;
     }
 
