@@ -9,14 +9,5 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Data
-public class Playlist implements Serializable {
-
-    @JsonProperty("song")
-    private Song[] songs = new Song[] {};
-
-    private String copyright;
-
-    @JsonIgnore
-    private LocalDateTime lastFetched = LocalDateTime.now();
+public record Playlist(@JsonProperty("song") Song[] songs, String copyright, @JsonIgnore LocalDateTime lastFetched) implements Serializable {
 }

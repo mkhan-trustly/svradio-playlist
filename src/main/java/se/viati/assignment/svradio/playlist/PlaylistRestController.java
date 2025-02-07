@@ -24,9 +24,13 @@ public class PlaylistRestController {
     @GetMapping("/playlist/recordlabels")
     public Map<String, List<Song>> getGroupByRecordLabel() {
         Optional<Playlist> playlist = playlistService.fetchPlaylistByChannel();
-        return Arrays.stream(playlist.orElse(new Playlist()).getSongs())
+        if (playlist.isEmpty()) {
+            return Map.of();
+        }
+
+        return Arrays.stream(playlist.get().songs())
                 .filter(Song::hasRecordLabel)
-                .collect(Collectors.groupingBy(Song::getRecordLabel, TreeMap::new, Collectors.toList()));
+                .collect(Collectors.groupingBy(Song::recordLabel, TreeMap::new, Collectors.toList()));
     }
 
     @GetMapping("/playlist/recordlabels/{recordLabel}")
@@ -38,10 +42,14 @@ public class PlaylistRestController {
     @GetMapping("/playlist/recordlabels/artist")
     public Map<String, Set<String>> getArtistsGroupedByRecordLabel() {
         Optional<Playlist> playlist = playlistService.fetchPlaylistByChannel();
-        return Arrays.stream(playlist.orElse(new Playlist()).getSongs())
+        if (playlist.isEmpty()) {
+            return Map.of();
+        }
+
+        return Arrays.stream(playlist.get().songs())
                 .filter(Song::hasRecordLabel)
-                .collect(Collectors.groupingBy(Song::getRecordLabel, TreeMap::new,
-                        Collectors.mapping(Song::getArtist, Collectors.toSet())));
+                .collect(Collectors.groupingBy(Song::recordLabel, TreeMap::new,
+                        Collectors.mapping(Song::artist, Collectors.toSet())));
     }
 
 }

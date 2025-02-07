@@ -22,7 +22,7 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
             HttpClientErrorException ex, WebRequest request) {
         PlaylistErrorResponse errorResponse = buildErrorResponse(ex, request)
                 .status(ex.getStatusCode().value())
-                .error(ex.getStatusCode().getReasonPhrase())
+                .error(ex.getStatusCode().toString())
                 .build();
         return new ResponseEntity<>(errorResponse, ex.getStatusCode());
     }
@@ -35,7 +35,7 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
                 .error(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
                 .build();
         log.error("Encountered exception of type {} when using service {} short stack trace\n {}",
-                ex.getClass().getName(), errorResponse.getPath(), ExceptionUtils.getShortStackTrace(ex));
+                ex.getClass().getName(), errorResponse.path(), ExceptionUtils.getShortStackTrace(ex));
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

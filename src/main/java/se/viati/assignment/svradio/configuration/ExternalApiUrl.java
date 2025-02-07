@@ -20,14 +20,7 @@ public class ExternalApiUrl {
     private String playlistByChannelEndpoint;
     private Parameters params;
 
-    @Data
-    static class Parameters {
-
-        private String channelId;
-        private String limit;
-        private String startDateTime;
-        private String endDateTime;
-        private String format;
+    record Parameters(String channelId, String limit, String startDateTime, String endDateTime, String format) {
     }
 
     public String getP3PlaylistEndpoint() {
@@ -36,13 +29,13 @@ public class ExternalApiUrl {
                 .append(playlist)
                 .append(playlistByChannelEndpoint)
                 .append("?")
-                .append(addParams(new String[]{params.getChannelId(), params.getLimit(), params.getStartDateTime(),
-                        params.getEndDateTime(), params.getFormat()}))
+                .append(addParams(new String[] {
+                        params.channelId(), params.limit(), params.startDateTime(),
+                        params.endDateTime(), params.format()}))
                 .toString();
     }
 
     private static String addParams(String[] params) {
-        return Stream.of(params)
-                .collect(Collectors.joining("&"));
+        return String.join("&", params);
     }
 }

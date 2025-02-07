@@ -5,13 +5,12 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Data
 @Builder
-public class PlaylistErrorResponse {
-
-    private LocalDateTime timestamp;
-    private int status;
-    private String error;
-    private String message;
-    private String path;
+public record PlaylistErrorResponse(LocalDateTime timestamp,
+                                    int status,
+                                    String error,
+                                    String message,
+                                    String path
+) {
 }
+

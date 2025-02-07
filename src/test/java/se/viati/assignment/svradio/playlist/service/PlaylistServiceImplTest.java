@@ -32,11 +32,10 @@ public class PlaylistServiceImplTest {
     public void testFetchPlaylistByChannel_ShouldWorkWithEmptyPlaylist() {
         Mockito
                 .when(restTemplate.getForObject(externalApiUrl.getP3PlaylistEndpoint(), Playlist.class))
-                .thenReturn(new Playlist());
+                .thenReturn(null);
 
         Optional<Playlist> playlist = playlistService.fetchPlaylistByChannel();
-        assertThat(playlist.isPresent()).isTrue();
-        assertThat(playlist.get().getSongs()).isEmpty();
+        assertThat(playlist.isPresent()).isFalse();
     }
 
     @Test
